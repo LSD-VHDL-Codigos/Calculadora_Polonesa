@@ -1,1 +1,0 @@
-# Calculadora_Polonesa

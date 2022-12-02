@@ -1,0 +1,10 @@
+v 4
+file . "convLeds.vhd" "bb05131b3f637516b840a48dd0e46f69afd7f6ba" "20221202013958.387":
+  entity convleds at 1( 0) + 0 on 47;
+  architecture hardware of convleds at 13( 216) + 0 on 48;
+file . "calc.vhd" "a46759b0648b4102fa0cc0e9181967417a334747" "20221202013958.359":
+  entity calc at 1( 0) + 0 on 45;
+  architecture hardware of calc at 15( 359) + 0 on 46;
+file . "tb_calc.vhd" "ae8264bfa088c17a9bc87b9c668021e103062af6" "20221202013958.412":
+  entity tb_calc at 5( 207) + 0 on 49;
+  architecture hardware of tb_calc at 12( 325) + 0 on 50;

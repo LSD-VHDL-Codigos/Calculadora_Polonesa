@@ -1,0 +1,249 @@
+$date
+  Thu Dec 01 22:39:58 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module tb_calc $end
+$var reg 1 ! ent_clk $end
+$var reg 1 " ent_clk_enable $end
+$var reg 1 # ent_reset $end
+$var reg 1 $ ent_entern $end
+$var reg 1 % ent_enters $end
+$var reg 4 & ent_num[3:0] $end
+$var reg 2 ' ent_sinal[1:0] $end
+$var reg 8 ( ent_h0[7:0] $end
+$var reg 8 ) ent_h1[7:0] $end
+$var reg 8 * ent_h2[7:0] $end
+$var reg 8 + ent_h3[7:0] $end
+$var reg 8 , ent_h4[7:0] $end
+$var reg 8 - ent_h5[7:0] $end
+$scope module dut $end
+$var reg 1 . reset $end
+$var reg 1 / clk $end
+$var reg 1 0 entern $end
+$var reg 1 1 enters $end
+$var reg 4 2 numero[3:0] $end
+$var reg 2 3 sinal[1:0] $end
+$var reg 8 4 hex0[7:0] $end
+$var reg 8 5 hex1[7:0] $end
+$var reg 8 6 hex2[7:0] $end
+$var reg 8 7 hex3[7:0] $end
+$var reg 8 8 hex4[7:0] $end
+$var reg 8 9 hex5[7:0] $end
+$comment pilhanumero is not handled $end
+$comment pilhasinal is not handled $end
+$var reg 4 : unid[3:0] $end
+$var reg 4 ; dec[3:0] $end
+$var reg 4 < cent[3:0] $end
+$var reg 4 = milhar[3:0] $end
+$var reg 4 > decmilhar[3:0] $end
+$var reg 4 ? centmilhar[3:0] $end
+$scope module x1 $end
+$var reg 4 @ num[3:0] $end
+$var reg 8 A hex[7:0] $end
+$upscope $end
+$scope module x2 $end
+$var reg 4 B num[3:0] $end
+$var reg 8 C hex[7:0] $end
+$upscope $end
+$scope module x3 $end
+$var reg 4 D num[3:0] $end
+$var reg 8 E hex[7:0] $end
+$upscope $end
+$scope module x4 $end
+$var reg 4 F num[3:0] $end
+$var reg 8 G hex[7:0] $end
+$upscope $end
+$scope module x5 $end
+$var reg 4 H num[3:0] $end
+$var reg 8 I hex[7:0] $end
+$upscope $end
+$scope module x6 $end
+$var reg 4 J num[3:0] $end
+$var reg 8 K hex[7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+1"
+1#
+1$
+U%
+bUUUU &
+bUU '
+b11111110 (
+b11111111 )
+b11111111 *
+b11111111 +
+b11111111 ,
+b11111111 -
+1.
+0/
+10
+U1
+bUUUU 2
+bUU 3
+b11111110 4
+b11111111 5
+b11111111 6
+b11111111 7
+b11111111 8
+b11111111 9
+b0000 :
+b1111 ;
+b1111 <
+b1111 =
+b1111 >
+b1111 ?
+b0000 @
+b11111110 A
+b1111 B
+b11111111 C
+b1111 D
+b11111111 E
+b1111 F
+b11111111 G
+b1111 H
+b11111111 I
+b1111 J
+b11111111 K
+#10000000
+1!
+1/
+#20000000
+0!
+0/
+#30000000
+1!
+1/
+#40000000
+0!
+0#
+0.
+0/
+#50000000
+1!
+1/
+#60000000
+0!
+0/
+#70000000
+1!
+1/
+#80000000
+0!
+0$
+0/
+00
+#90000000
+1!
+1/
+#100000000
+0!
+0/
+#110000000
+1!
+1/
+#120000000
+0!
+1$
+0/
+10
+#130000000
+1!
+1/
+#140000000
+0!
+0/
+#150000000
+1!
+1/
+#160000000
+0!
+0/
+#170000000
+1!
+1/
+#180000000
+0!
+0/
+#190000000
+1!
+1/
+#200000000
+0!
+0/
+#210000000
+1!
+1/
+#220000000
+0!
+0/
+#230000000
+1!
+1/
+#240000000
+0!
+0/
+#250000000
+1!
+1/
+#260000000
+0!
+0/
+#270000000
+1!
+1/
+#280000000
+0!
+0/
+#290000000
+1!
+1/
+#300000000
+0!
+0/
+#310000000
+1!
+1/
+#320000000
+0!
+0/
+#330000000
+1!
+1/
+#340000000
+0!
+0/
+#350000000
+1!
+1/
+#360000000
+0!
+0/
+#370000000
+1!
+1/
+#380000000
+0!
+0/
+#390000000
+1!
+1/
+#400000000
+0!
+0"
+0/
+#410000000
