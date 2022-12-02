@@ -20,9 +20,9 @@ architecture hardware of calc is
   end component;
 
   type pilhaNu is array (natural range <>) of std_logic_vector(3 downto 0);
-  type pilhaSi is array (natural range <>) of std_logic_vector(1 downto 0);
+  type state_type is (US, UN, DN, DS); -- A-01 B-10 C-11 ...
+  signal PS, PN: state_type;
   signal PilhaNumero :  pilhaNu (0 to 10);
-  signal PilhaSinal :  pilhaSi (0 to 10);
   signal unid, dec, cent, milhar, decMilhar, centMilhar: std_logic_vector(3 downto 0) := "1111"; -- numero para os displays
 
 begin
@@ -36,23 +36,31 @@ begin
   x6 : convLeds port map(num =>centMilhar, HEX =>HEX5);
 
   comb_proc : process (clk, reset)
-  variable cntN, cntS : integer range 0 to 10 := 0;
-  begin
-    if (reset = '1') then
-      unid <= "0000";
-      dec  <= "1111";
-      cent <= "1111";
-      milhar <= "1111";
-      decMilhar <="1111";
-      centMilhar <= "1111";
-      
-    elsif (RISING_EDGE(clk)) then
-      if (enterN = '1') then --verifica se for apertado enter para números 
-          PilhaNumero(cntN) <= numero;
-      end if;
-      if(enterS = '1') then --verifica se for apertado enter para sinal
-          PilhaSinal(cntS) <= sinal;
-      end if;
-    end if;
-  end process comb_proc;
+    variable cnt: integer range 0 to 10 := 0;
+    begin
+      if(rising_edge(clk)) then
+        if(reset = '1') then
+          unid <= "0000";
+          dec  <= "1111";
+          cent <= "1111";
+          milhar <= "1111";
+          decMilhar <="1111";
+          centMilhar <= "1111";
+          PilhaNumero(cnt) <= numero;
+          unid <= PilhaNumero(0);
+          cnt := 0;
+          PS <= DS;
+          PN <= DN;
+        elsif(enterN = '1' and PN= DN) then
+            PilhaNumero(cnt) <= numero; --erro com o vetor pois ele demora para instanciar o elemento
+            cnt := cnt + 1;
+          --  unid <= numero;
+            PN <= UN;
+        elsif(enterN = '0' and PN=UN) then
+            PN <= DN;
+        elsif(enterS = '1')  then
+          cnt :=0;
+       end if;
+     end if;
+    end process comb_proc;
 end hardware;

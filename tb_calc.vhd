@@ -50,10 +50,12 @@ begin
   stimulus: process
   begin
       ENT_ENTERN <= '1';
+      ENT_NUM <= "1010";
       wait for 4*PERIODO;
       ENT_ENTERN <= '0';
       wait for 2*PERIODO;
       ENT_ENTERN <= '1';
+      ENT_NUM <= "0110";
       wait;
   end process stimulus;
 end architecture;
