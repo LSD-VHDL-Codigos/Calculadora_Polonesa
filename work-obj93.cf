@@ -1,10 +1,10 @@
 v 4
-file . "calc.vhd" "61bfe51f5311a933f39c32a0d566bd4eeea139bb" "20221203222813.015":
-  entity calc at 1( 0) + 4 on 43;
-  architecture hardware of calc at 16( 420) + 4 on 44;
-file . "convLeds.vhd" "bb8a1b28ceffb1dc457c996f0590a2d8e993aadc" "20221203222812.983":
-  entity convleds at 1( 0) + 0 on 41;
-  architecture hardware of convleds at 13( 209) + 0 on 42;
-file . "tb_calc.vhd" "4558554ada0dab1dc36addbb9061cbb410857888" "20221203222813.047":
-  entity tb_calc at 5( 207) + 0 on 45;
-  architecture hardware of tb_calc at 12( 325) + 0 on 46;
+file . "calc.vhd" "ba3bea6e5410ee360f716e57f5bdddca61333403" "20221203230705.291":
+  entity calc at 1( 0) + 0 on 67;
+  architecture hardware of calc at 16( 371) + 0 on 68;
+file . "convLeds.vhd" "bb8a1b28ceffb1dc457c996f0590a2d8e993aadc" "20221203230705.262":
+  entity convleds at 1( 0) + 0 on 65;
+  architecture hardware of convleds at 13( 209) + 0 on 66;
+file . "tb_calc.vhd" "8c4a32100a9250cd4437f54bb101387de0dcdaa0" "20221203230705.312":
+  entity tb_calc at 2( 24) + 0 on 69;
+  architecture hardware of tb_calc at 9( 142) + 0 on 70;

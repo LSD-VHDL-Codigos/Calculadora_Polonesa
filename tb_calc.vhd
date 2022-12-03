@@ -1,6 +1,3 @@
------------------------------------------------------------
--- Model of a simple testbench to simulate a D Flip-Flop --
------------------------------------------------------------
 -- library declaration
 library IEEE;
 use IEEE.std_logic_1164.all;
