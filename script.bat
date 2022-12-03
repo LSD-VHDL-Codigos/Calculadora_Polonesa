@@ -17,8 +17,8 @@
 :: Modifique a linha abaixo para o caminho do seu computador onde se encontra os seus arquivos fonte a serem compilados e simulados.
 cd C:\root\Lab-SD\Calculadora_Polonesa
 :: Modifique as linhas seguintes para incluir os arquivos .vhd que deseja analisar (compilar).
-ghdl -a calc.vhd
 ghdl -a convLeds.vhd
+ghdl -a calc.vhd
 ghdl -a tb_calc.vhd
 :: Modifique a linha a seguir com o nome da entidade top level do arquivo testbench que você deseja simular.
 ghdl -e tb_calc
