@@ -1,0 +1,258 @@
+$date
+  Sat Dec 03 19:28:13 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module tb_calc $end
+$var reg 1 ! ent_clk $end
+$var reg 1 " ent_clk_enable $end
+$var reg 1 # ent_reset $end
+$var reg 1 $ ent_entern $end
+$var reg 1 % ent_enters $end
+$var reg 4 & ent_num[3:0] $end
+$var reg 2 ' ent_sinal[1:0] $end
+$var reg 8 ( ent_h0[7:0] $end
+$var reg 8 ) ent_h1[7:0] $end
+$var reg 8 * ent_h2[7:0] $end
+$var reg 8 + ent_h3[7:0] $end
+$scope module dut $end
+$var reg 1 , reset $end
+$var reg 1 - clk $end
+$var reg 1 . entern $end
+$var reg 1 / enters $end
+$var reg 4 0 numero[3:0] $end
+$var reg 2 1 sinal[1:0] $end
+$var reg 8 2 hex0[7:0] $end
+$var reg 8 3 hex1[7:0] $end
+$var reg 8 4 hex2[7:0] $end
+$var reg 8 5 hex3[7:0] $end
+$comment ps is not handled $end
+$comment pn is not handled $end
+$comment pilhanumero is not handled $end
+$var integer 32 6 resultado $end
+$var integer 32 7 unid $end
+$var integer 32 8 dec $end
+$var integer 32 9 cent $end
+$var integer 32 : milhar $end
+$scope module x1 $end
+$var integer 32 ; num $end
+$var reg 8 < hex[7:0] $end
+$upscope $end
+$scope module x2 $end
+$var integer 32 = num $end
+$var reg 8 > hex[7:0] $end
+$upscope $end
+$scope module x3 $end
+$var integer 32 ? num $end
+$var reg 8 @ hex[7:0] $end
+$upscope $end
+$scope module x4 $end
+$var integer 32 A num $end
+$var reg 8 B hex[7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+1"
+1#
+1$
+0%
+b0101 &
+bUU '
+b11111111 (
+b11111111 )
+b11111111 *
+b11111111 +
+1,
+0-
+1.
+0/
+b0101 0
+bUU 1
+b11111111 2
+b11111111 3
+b11111111 4
+b11111111 5
+b11111111111111111111110000011001 6
+b1010 7
+b1010 8
+b1010 9
+b1010 :
+b1010 ;
+b11111111 <
+b1010 =
+b11111111 >
+b1010 ?
+b11111111 @
+b1010 A
+b11111111 B
+#10000000
+1!
+b11111110 (
+1-
+b11111110 2
+b0 7
+b0 ;
+b11111110 <
+#20000000
+0!
+0-
+#30000000
+1!
+1-
+#40000000
+0!
+0#
+0,
+0-
+#50000000
+1!
+1-
+#60000000
+0!
+0-
+b101 6
+#70000000
+1!
+1-
+#80000000
+0!
+0$
+0-
+0.
+#90000000
+1!
+1-
+#100000000
+0!
+0-
+#110000000
+1!
+1-
+#120000000
+0!
+1$
+b0110 &
+0-
+1.
+b0110 0
+#130000000
+1!
+1-
+#140000000
+0!
+0-
+#150000000
+1!
+1-
+#160000000
+0!
+1%
+b00 '
+0-
+1/
+b00 1
+#170000000
+1!
+1-
+#180000000
+0!
+0-
+b1011 6
+#190000000
+1!
+1-
+#200000000
+0!
+0$
+0%
+0-
+0.
+0/
+#210000000
+1!
+1-
+#220000000
+0!
+0-
+#230000000
+1!
+1-
+#240000000
+0!
+0-
+#250000000
+1!
+1-
+#260000000
+0!
+1$
+b0111 &
+0-
+1.
+b0111 0
+#270000000
+1!
+1-
+#280000000
+0!
+0-
+#290000000
+1!
+1-
+#300000000
+0!
+0-
+#310000000
+1!
+1-
+#320000000
+0!
+1%
+b01 '
+0-
+1/
+b01 1
+#330000000
+1!
+1-
+#340000000
+0!
+0-
+b100 6
+#350000000
+1!
+1-
+#360000000
+0!
+0-
+#370000000
+1!
+1-
+#380000000
+0!
+0$
+0%
+0-
+0.
+0/
+#390000000
+1!
+1-
+#400000000
+0!
+0"
+0-
+#410000000

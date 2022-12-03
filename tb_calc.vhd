@@ -17,7 +17,7 @@ architecture hardware of tb_calc is
       reset, clk, enterN, enterS: in std_logic;
       numero : in std_logic_vector(3 downto 0);
       sinal : in std_logic_vector(1 downto 0);
-      HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: out std_logic_vector (7 downto 0)
+      HEX0, HEX1, HEX2, HEX3: out std_logic_vector (7 downto 0)
     );
   end component;
 
@@ -27,7 +27,7 @@ architecture hardware of tb_calc is
   signal ENT_RESET, ENT_ENTERN, ENT_ENTERS: std_logic;
   signal ENT_NUM : std_logic_vector(3 downto 0);
   signal ENT_SINAL : std_logic_vector(1 downto 0);
-  signal ENT_H0, ENT_H1, ENT_H2, ENT_H3, ENT_H4, ENT_H5: std_logic_vector (7 downto 0);
+  signal ENT_H0, ENT_H1, ENT_H2, ENT_H3: std_logic_vector (7 downto 0);
 
 begin
   -- geração do clock com periodo PERIODO
@@ -36,7 +36,7 @@ begin
 
   -- instanciação do DUT, que nesse exemplo é um ffd
   DUT : calc port map(clk => ENT_CLK, reset => ENT_RESET, numero => ENT_NUM, sinal => ENT_SINAL, enterN => ENT_ENTERN, enterS => ENT_ENTERS,
-                       HEX0 => ENT_H0, HEX1 => ENT_H1, HEX2 => ENT_H2, HEX3 => ENT_H3, HEX4 => ENT_H4, HEX5 => ENT_H5);
+                       HEX0 => ENT_H0, HEX1 => ENT_H1, HEX2 => ENT_H2, HEX3 => ENT_H3);
   -- a partir daqui declaro os estímulos de entrada, ou a injecao de sinais
   -- um process para o reset
   reset : process
@@ -50,19 +50,29 @@ begin
   stimulus: process
   begin
 
-      ENT_ENTERN <= '1';
-      ENT_ENTERS <= '0';
-      ENT_NUM <= "0101";
-      wait for 4*PERIODO;
-      ENT_ENTERN <= '0';
-      wait for 2*PERIODO;
-      ENT_ENTERN <= '1';
-      ENT_NUM <= "0110";
-      wait for 2*PERIODO;
-      ENT_ENTERS <= '1';
-      ENT_SINAL <= "01";
-      wait for 2*PERIODO;
-      ENT_ENTERS <= '0';
-      wait;
+    ENT_ENTERN <= '1';
+    ENT_ENTERS <= '0';
+    ENT_NUM <= "0101";
+    wait for 4*PERIODO;
+    ENT_ENTERN <= '0';
+    wait for 2*PERIODO;
+    ENT_ENTERN <= '1';
+    ENT_NUM <= "0110";
+    wait for 2*PERIODO;
+    ENT_ENTERS <= '1';
+    ENT_SINAL <= "00"; --ADICAO
+    wait for 2*PERIODO;
+    ENT_ENTERN <= '0';
+    ENT_ENTERS <= '0';
+    wait for 3*PERIODO;
+    ENT_ENTERN <= '1';
+    ENT_NUM <= "0111";
+    wait for 3*PERIODO;
+    ENT_ENTERS <= '1';
+    ENT_SINAL <= "01"; -- SUBTRACAO
+    wait for 3*PERIODO;
+    ENT_ENTERN <= '0';
+    ENT_ENTERS <= '0';
+    wait;
   end process stimulus;
 end architecture;
