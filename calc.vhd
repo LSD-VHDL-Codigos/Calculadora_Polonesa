@@ -24,7 +24,6 @@ architecture hardware of calc is
   type state_type is (US, UN, DN, DS); -- Us- UP sinal, UN- UP Numero ..
   signal PS, PN : state_type; --estados atuais do sinal e numero
   signal PilhaNumero : pilhaNu (0 to 10);
-  signal resultado : integer range -999 to 999; --variavel aux somente para visualização
   signal unid, dec, cent : integer range 0 to 10 := 10; -- numero para os displays   
 begin
 
@@ -33,20 +32,6 @@ begin
   x2 : convLeds port map(num => dec, HEX => HEX1);
   x3 : convLeds port map(num => cent, HEX => HEX2);
   -- x4 : convLeds port map(num => operando, HEX => HEX3);
-
-  comb_proc : process (PilhaNumero(0))
-  begin
-    if (PilhaNumero(0) < 0) then
-      PilhaNumero(0) <= PilhaNumero(0) * (-1);
-      HEX3 <= "11111110";
-    else
-      resultado <= PilhaNumero(0);
-      unid <= PilhaNumero(0) mod 10;
-      dec <= (PilhaNumero(0) mod 100)/10;
-      cent <= (PilhaNumero(0) mod 1000)/100; 
-      HEX3 <= "11111111";
-    end if;
-  end process comb_proc;
 
   sync_proc : process (clk, reset)
     variable cnt : integer range -1 to 10 := - 1;
@@ -86,7 +71,18 @@ begin
         PS <= DS; -- Down state
       end if;
     end if;
-
+    if(falling_edge(clk) and reset = '0') then --Mapeamento para o display 
+        if(PilhaNumero(0)<0) then --instancia display negativos
+            HEX3 <= "11111110";
+            cent <= PilhaNumero(0)/(-100);
+            dec <= (PilhaNumero(0)*(-1)-(PilhaNumero(0)/(-100))*100)/10;
+            unid <= PilhaNumero(0)*(-1) mod 10;
+        else --instância display positivo
+            cent <= PilhaNumero(0)/100;
+            dec <= (PilhaNumero(0)-(PilhaNumero(0)/100)*100)/10;
+            unid <= PilhaNumero(0) mod 10;
+        end if;
+    end if;
   end process sync_proc;
 
 end hardware;
