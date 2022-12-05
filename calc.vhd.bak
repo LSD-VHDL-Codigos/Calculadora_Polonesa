@@ -41,11 +41,9 @@ begin
         unid <= 0;
         dec <= 10;
         cent <= 10;
-        cnt := -1;
+        cnt := - 1;
         PS <= DS;
         PN <= DN;
-        PilhaNumero(0) <= 0;
-        HEX3 <= "11111111"; -- DESLIGA O HEX3
       elsif (enterN = '1' and PN = DN) then
         cnt := cnt + 1;
         PilhaNumero(cnt) <= to_integer(unsigned(numero)); --converter o número da entrada para decimal
@@ -72,39 +70,19 @@ begin
       elsif (enterS = '0' and PS = US) then
         PS <= DS; -- Down state
       end if;
-
-      if(cnt>-1) then
-        if(PilhaNumero(cnt)<0) then --instancia display negativos
-          if(PilhaNumero(cnt)<-99) then
-            cent <= PilhaNumero(cnt)/(-100);
-            dec <= (PilhaNumero(cnt)*(-1)-(PilhaNumero(cnt)/(-100))*100)/10;
-            unid <= PilhaNumero(cnt)*(-1) mod 10;
-          elsif (PilhaNumero(cnt)< -9) then
-            cent <= 10; --deliga o HEX2
-            dec <= PilhaNumero(cnt)/(-10);
-          else
-            cent <= 10; --deliga o HEX2
-            dec <= 10; --deliga o HEX1
-          end if;
-
-          HEX3 <= "11111110";
-          unid <= PilhaNumero(cnt)*(-1) mod 10;
+    end if;
+    if(falling_edge(clk) and reset = '0') then --Mapeamento para o display 
+        if(PilhaNumero(0)<0) then --instancia display negativos
+            HEX3 <= "11111110";
+            cent <= PilhaNumero(0)/(-100);
+            dec <= (PilhaNumero(0)*(-1)-(PilhaNumero(0)/(-100))*100)/10;
+            unid <= PilhaNumero(0)*(-1) mod 10;
         else --instância display positivo
-          if(PilhaNumero(cnt)>99) then
-            cent <= PilhaNumero(cnt)/100;
-            dec <= (PilhaNumero(cnt)-(PilhaNumero(cnt)/100)*100)/10;
-          elsif(PilhaNumero(cnt)>9) then
-            cent <= 10; --deliga o HEX2
-            dec <= PilhaNumero(cnt)/10;
-          else
-            cent <= 10; --deliga o HEX2
-            dec <= 10; --deliga o HEX1
-          end if;
-          unid <= PilhaNumero(cnt) mod 10;
-          HEX3 <= "11111111";
+            cent <= PilhaNumero(0)/100;
+            dec <= (PilhaNumero(0)-(PilhaNumero(0)/100)*100)/10;
+            unid <= PilhaNumero(0) mod 10;
         end if;
-      end if;
-    end if;  
+    end if;
   end process sync_proc;
 
 end hardware;

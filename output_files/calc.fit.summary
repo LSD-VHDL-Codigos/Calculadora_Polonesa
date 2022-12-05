@@ -1,0 +1,18 @@
+Fitter Status : Successful - Mon Dec 05 14:36:37 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : calc
+Top-level Entity Name : calc
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 2,243 / 49,760 ( 5 % )
+    Total combinational functions : 2,238 / 49,760 ( 4 % )
+    Dedicated logic registers : 143 / 49,760 ( < 1 % )
+Total registers : 143
+Total pins : 42 / 360 ( 12 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )
