@@ -87,7 +87,7 @@ begin
             dec <= 10; --deliga o HEX1
           end if;
 
-          HEX3 <= "11111110"; --coloca o sinal -
+          HEX3 <= "11111101"; --coloca o sinal -
           unid <= PilhaNumero(cnt)*(-1) mod 10;
         else --instância display positivo
           if(PilhaNumero(cnt)>99) then
