@@ -53,10 +53,11 @@ begin
         else
           PN <= UN;
         end if;
+        
         if(enterS = '0') then
           PS <= DS;
         else
-           PS <= US; 
+          PS <= US; 
         end if;
 
       elsif (enterN = '1' and PN = DN) then
