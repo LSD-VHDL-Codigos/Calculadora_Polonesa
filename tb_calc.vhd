@@ -29,7 +29,7 @@ architecture hardware of tb_calc is
 begin
   -- geração do clock com periodo PERIODO
   ENT_CLK <= ENT_CLK_ENABLE and not ENT_CLK after PERIODO/2;
-  ENT_CLK_ENABLE <= '1', '0' after 20*PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
+  ENT_CLK_ENABLE <= '1', '0' after 50*PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
 
   -- instanciação do DUT, que nesse exemplo é um ffd
   DUT : calc port map(clk => ENT_CLK, reset => ENT_RESET, numero => ENT_NUM, sinal => ENT_SINAL, enterN => ENT_ENTERN, enterS => ENT_ENTERS,
@@ -47,24 +47,27 @@ begin
   stimulus: process
   begin
 
-    ENT_ENTERN <= '1';
+    ENT_ENTERN <= '0';
     ENT_ENTERS <= '0';
     ENT_NUM <= "0101";
+    wait for 2*PERIODO;
+    ENT_ENTERN <= '1';
     wait for 4*PERIODO;
     ENT_ENTERN <= '0';
     wait for 2*PERIODO;
-    ENT_ENTERN <= '1';
     ENT_NUM <= "0110";
-    wait for 2*PERIODO;
-    ENT_ENTERS <= '1';
-    ENT_SINAL <= "00"; --ADICAO
+    ENT_ENTERN <= '1';
     wait for 2*PERIODO;
     ENT_ENTERN <= '0';
+    ENT_SINAL <= "00"; --ADICAO
+    ENT_ENTERS <= '1';
+    wait for 2*PERIODO;
     ENT_ENTERS <= '0';
     wait for 3*PERIODO;
-    ENT_ENTERN <= '1';
     ENT_NUM <= "0111";
+    ENT_ENTERN <= '1';
     wait for 3*PERIODO;
+    ENT_ENTERN <= '0';
     ENT_ENTERS <= '1';
     ENT_SINAL <= "01"; -- SUBTRACAO
     wait for 3*PERIODO;

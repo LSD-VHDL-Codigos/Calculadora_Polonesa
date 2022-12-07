@@ -42,6 +42,12 @@ begin
         dec <= 10;
         cent <= 10;
         cnt := -1;
+        HEX3 <= "11111111"; -- DESLIGA O HEX3
+
+        for i in 0 to 10 loop 
+          PilhaNumero(0) <= 0;
+        end loop;
+
         if(enterN = '0') then
           PN <= DN;
         else
@@ -53,42 +59,36 @@ begin
            PS <= US; 
         end if;
 
-        PilhaNumero(0) <= 0;
-        HEX3 <= "11111111"; -- DESLIGA O HEX3
-
       elsif (enterN = '1' and PN = DN) then
+        PilhaNumero(cnt+1) <= to_integer(unsigned(numero)); --converter o número da entrada para decimal
         cnt := cnt + 1;
-        PilhaNumero(cnt) <= to_integer(unsigned(numero)); --converter o número da entrada para decimal
         init <= 1;
         PN <= UN;
       elsif (enterN = '0' and PN = UN) then
         PN <= DN;
 
-      elsif (enterS = '1' and PS = DS) then
-        if (cnt > 0) then --realiza o calculo
-          if (sinal = "00") then --verifica se for o sinal de +
+      elsif (enterS = '1' and PS = DS and cnt > -1) then
+          if (sinal = "00" and cnt > 0) then --verifica se for o sinal de +
             PilhaNumero(cnt - 1) <= (PilhaNumero(cnt - 1) + PilhaNumero(cnt));
             init <= 1;
-          elsif (sinal = "01") then --verifica se for o sinal de -
+            cnt := cnt - 1;
+          elsif (sinal = "01" and cnt > 0) then --verifica se for o sinal de -
             PilhaNumero(cnt - 1) <= (PilhaNumero(cnt - 1) - PilhaNumero(cnt));
             init <=1;
+            cnt := cnt - 1;
+          elsif (sinal = "10") then --verifica se for o sinal de uma operacao de deslocamento
+            PilhaNumero(cnt) <= (PilhaNumero(cnt) * 2);
+            init <= 1;
+          elsif (sinal = "11") then --verifica se for o sinal de >> (deslocamento para direita)
+            PilhaNumero(cnt) <= (PilhaNumero(cnt)/2);
+            init <=1;
           end if;
-          cnt := cnt - 1;
-        end if;
-
-        if (sinal = "10") then --verifica se for o sinal de uma operacao de deslocamento
-          PilhaNumero(cnt) <= (PilhaNumero(cnt) * 2);
-          init <= 1;
-        elsif (sinal = "11") then --verifica se for o sinal de >> (deslocamento para direita)
-          PilhaNumero(cnt) <= (PilhaNumero(cnt)/2);
-          init <=1;
-        end if;
-        PS <= US;
+          PS <= US;
       elsif (enterS = '0' and PS = US) then
         PS <= DS; -- Down state
       end if;
 
-      if(init = 1) then
+      if(init = 1 ) then
         init <= 0;
         if(PilhaNumero(cnt)<0) then --instancia display negativos
 
