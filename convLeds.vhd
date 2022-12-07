@@ -15,7 +15,7 @@ begin
   proc:process(num)
     begin
       case num is
-        when 0 => HEX <= "11000000"; -- 0 --
+        when 0 => HEX <= "11000000"; -- 0 
         when 1 => HEX <= "11111001"; -- 1
         when 2 => HEX <= "10100100"; -- 2
         when 3 => HEX <= "10110000"; -- 3

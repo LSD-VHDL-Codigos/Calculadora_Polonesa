@@ -44,8 +44,9 @@ begin
         cnt := -1;
         HEX3 <= "11111111"; -- DESLIGA O HEX3
 
+        -- limpa as posições da pilha
         for i in 0 to 10 loop 
-          PilhaNumero(0) <= 0;
+          PilhaNumero(i) <= 0;
         end loop;
 
         if(enterN = '0') then
@@ -69,13 +70,14 @@ begin
         PN <= DN;
 
       elsif (enterS = '1' and PS = DS and cnt > -1) then
+        -- realiza as operacoes e joga o resultado na pilha
           if (sinal = "00" and cnt > 0) then --verifica se for o sinal de +
             PilhaNumero(cnt - 1) <= (PilhaNumero(cnt - 1) + PilhaNumero(cnt));
             init <= 1;
             cnt := cnt - 1;
           elsif (sinal = "01" and cnt > 0) then --verifica se for o sinal de -
             PilhaNumero(cnt - 1) <= (PilhaNumero(cnt - 1) - PilhaNumero(cnt));
-            init <=1;
+            init <= 1;
             cnt := cnt - 1;
           elsif (sinal = "10") then --verifica se for o sinal de uma operacao de deslocamento
             PilhaNumero(cnt) <= (PilhaNumero(cnt) * 2);
