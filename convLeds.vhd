@@ -21,10 +21,10 @@ begin
         when 3 => HEX <= "10110000"; -- 3
         when 4 => HEX <= "10011001"; -- 4
         when 5 => HEX <= "10010010"; -- 5
-        when 6 => HEX <= "11111101"; -- 6
+        when 6 => HEX <= "10000010"; -- 6
         when 7 => HEX <= "11111000"; -- 7
         when 8 => HEX <= "10000000"; -- 8
-        when 9 => HEX <= "11101111"; -- 9
+        when 9 => HEX <= "10010000"; -- 9
         when others => HEX <= "11111111"; --DELIGADO
       end case;
     end process proc;
