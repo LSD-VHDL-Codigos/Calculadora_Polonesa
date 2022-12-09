@@ -24,7 +24,8 @@ architecture hardware of calc is
   type state_type is (US, UN, DN, DS); -- Us- UP sinal, UN- UP Numero ..
   signal PS, PN : state_type; --estados atuais do sinal e numero
   signal PilhaNumero : pilhaNu (0 to 10);
-  signal unid, dec, cent, init : integer range 0 to 10 := 10; -- numero para os displays   
+  signal unid, dec, cent, init : integer range 0 to 10 := 10; -- numero para os displays 
+  signal clk100 : std_logic;  
 begin
 
   --Cria um digito para cada display
@@ -32,10 +33,10 @@ begin
   x2 : convLeds port map(num => dec, HEX => HEX1);
   x3 : convLeds port map(num => cent, HEX => HEX2);
 
-  sync_proc : process (clk, reset)
+  sync_proc : process (clk100, reset)
     variable cnt : integer range -1 to 10 := - 1;
   begin
-    if (rising_edge(clk)) then
+    if (rising_edge(clk100)) then
       if (reset = '1' or init = 10) then
         init <= 0;
         unid <= 0;
@@ -80,7 +81,7 @@ begin
             init <= 1;
             cnt := cnt - 1;
           elsif (sinal = "10") then --verifica se for o sinal de uma operacao de deslocamento
-            PilhaNumero(cnt) <= (PilhaNumero(cnt) * 2);
+            PilhaNumero(cnt) <= (PilhaNumero(cnt)*2);
             init <= 1;
           elsif (sinal = "11") then --verifica se for o sinal de >> (deslocamento para direita)
             PilhaNumero(cnt) <= (PilhaNumero(cnt)/2);
@@ -98,7 +99,6 @@ begin
           if(PilhaNumero(cnt)<-99) then
             cent <= PilhaNumero(cnt)/(-100);
             dec <= (PilhaNumero(cnt)*(-1)-(PilhaNumero(cnt)/(-100))*100)/10;
-            unid <= PilhaNumero(cnt)*(-1) mod 10;
           elsif (PilhaNumero(cnt)< -9) then
             cent <= 10; --deliga o HEX2
             dec <= PilhaNumero(cnt)/(-10);
@@ -131,4 +131,21 @@ begin
     end if;  
   end process sync_proc;
 
+  process(clk)
+    variable cnt : integer range 0 to 5000000;
+    variable b : std_logic := '0';
+    begin
+      if(rising_edge(clk)) then
+         if(reset = '1') then
+           cnt := 0;
+        else
+           cnt := cnt + 1;
+           end if;
+        if(cnt = 4999999) then
+          b := not b;
+          cnt := 0;
+        end if;
+      end if;
+      clk100 <= b;
+    end process;
 end hardware;
