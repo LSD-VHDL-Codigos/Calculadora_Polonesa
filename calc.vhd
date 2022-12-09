@@ -98,7 +98,6 @@ begin
           if(PilhaNumero(cnt)<-99) then
             cent <= PilhaNumero(cnt)/(-100);
             dec <= (PilhaNumero(cnt)*(-1)-(PilhaNumero(cnt)/(-100))*100)/10;
-            unid <= PilhaNumero(cnt)*(-1) mod 10;
           elsif (PilhaNumero(cnt)< -9) then
             cent <= 10; --deliga o HEX2
             dec <= PilhaNumero(cnt)/(-10);
