@@ -58,13 +58,18 @@ begin
     ENT_NUM <= "0110";
     ENT_ENTERN <= '1';
     wait for 2*PERIODO;
+    ENT_SINAL <= "10"; --DESLOCAMENTO PARA ESQUERDA
+    ENT_ENTERS <= '1';
+    wait for 2*PERIODO;
+    ENT_ENTERS <= '0';
+    wait for 2*PERIODO;
     ENT_ENTERN <= '0';
-    ENT_SINAL <= "00"; --ADICAO
+    ENT_SINAL <= "01"; --ADICAO
     ENT_ENTERS <= '1';
     wait for 2*PERIODO;
     ENT_ENTERS <= '0';
     wait for 3*PERIODO;
-    ENT_NUM <= "0111";
+    ENT_NUM <= "1000";
     ENT_ENTERN <= '1';
     wait for 3*PERIODO;
     ENT_ENTERN <= '0';

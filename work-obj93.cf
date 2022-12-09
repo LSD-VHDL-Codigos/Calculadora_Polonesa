@@ -1,10 +1,10 @@
 v 4
-file . "calc.vhd" "0c2f3e09b8fa9c53d9bd71d930cc7ff5be491f1b" "20221209152530.326":
-  entity calc at 1( 0) + 0 on 355;
-  architecture hardware of calc at 16( 371) + 0 on 356;
-file . "convLeds.vhd" "275bfa0c73c96ad795a7be35847e804f2c481856" "20221209152530.239":
-  entity convleds at 1( 0) + 0 on 353;
-  architecture hardware of convleds at 13( 209) + 0 on 354;
-file . "tb_calc.vhd" "752dcaabee799eacfc2afe94e6dba755b1ef7d8d" "20221209152530.391":
-  entity tb_calc at 2( 24) + 0 on 357;
-  architecture hardware of tb_calc at 9( 142) + 0 on 358;
+file . "calc.vhd" "453f9a0975394f17cef58f2d405f1262fcf2159e" "20221209121500.924":
+  entity calc at 1( 0) + 0 on 387;
+  architecture hardware of calc at 16( 371) + 0 on 388;
+file . "convLeds.vhd" "275bfa0c73c96ad795a7be35847e804f2c481856" "20221209121500.885":
+  entity convleds at 1( 0) + 0 on 385;
+  architecture hardware of convleds at 13( 209) + 0 on 386;
+file . "tb_calc.vhd" "e306c87d718a54a46e49757f20eca36b37dde265" "20221209121500.962":
+  entity tb_calc at 2( 24) + 0 on 389;
+  architecture hardware of tb_calc at 9( 142) + 0 on 390;
