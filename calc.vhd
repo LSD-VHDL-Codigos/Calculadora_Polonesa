@@ -14,6 +14,13 @@ end calc;
 
 -- architecture
 architecture hardware of calc is
+
+  component divisor_clock is
+    port (clk50MHz : in std_logic;
+          reset : in std_logic;
+          clk100ms : out std_logic);
+  end component;
+
   component convLeds is
     port (
       num : in integer range 0 to 10;
@@ -32,11 +39,12 @@ begin
   x1 : convLeds port map(num => unid, HEX => HEX0);
   x2 : convLeds port map(num => dec, HEX => HEX1);
   x3 : convLeds port map(num => cent, HEX => HEX2);
+  x4 : divisor_clock port map(clk50MHz =>clk, reset=>reset, clk100ms=>clk100);
 
   sync_proc : process (clk100, reset)
     variable cnt : integer range -1 to 10 := - 1;
   begin
-    if (rising_edge(clk100)) then
+    if (rising_edge(clk)) then
       if (reset = '1' or init = 10) then
         init <= 0;
         unid <= 0;
@@ -130,22 +138,4 @@ begin
       end if;
     end if;  
   end process sync_proc;
-
-  process(clk)
-    variable cnt : integer range 0 to 5000000;
-    variable b : std_logic := '0';
-    begin
-      if(rising_edge(clk)) then
-         if(reset = '1') then
-           cnt := 0;
-        else
-           cnt := cnt + 1;
-           end if;
-        if(cnt = 4999999) then
-          b := not b;
-          cnt := 0;
-        end if;
-      end if;
-      clk100 <= b;
-    end process;
 end hardware;
