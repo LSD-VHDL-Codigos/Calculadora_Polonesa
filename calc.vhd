@@ -15,11 +15,11 @@ end calc;
 -- architecture
 architecture hardware of calc is
 
- -- component divisor_clock is
- --   port (clk50MHz : in std_logic;
-  --        rset : in std_logic;
-  --        clk100ms : out std_logic);
- -- end component;
+  component divisor_clock is
+    port (clk50MHz : in std_logic;
+          rset : in std_logic;
+          clk100ms : out std_logic);
+  end component;
 
   component convLeds is
     port (
@@ -32,38 +32,24 @@ architecture hardware of calc is
   signal PS, PN : state_type; --estados atuais do sinal e numero
   signal PilhaNumero : pilhaNu (0 to 10);
   signal unid, dec, cent, init : integer range 0 to 10 := 10; -- numero para os displays 
-  signal clk100, bk: std_logic := '0';  
+  signal clk100: std_logic := '0';  
 begin
 
   --Cria um digito para cada display
   x1 : convLeds port map(num => unid, HEX => HEX0);
   x2 : convLeds port map(num => dec, HEX => HEX1);
   x3 : convLeds port map(num => cent, HEX => HEX2);
-  --x4 : divisor_clock port map(clk50MHz =>clk, rset=>reset, clk100ms=>clk100);
+  x4 : divisor_clock port map(clk50MHz =>clk, rset=>reset, clk100ms=>clk100);
 
   sync_proc : process (clk, reset)
     variable cnt : integer range -1 to 10 := - 1;
-    variable cont : integer range 0 to 5000000;
   begin
-
-    if(rising_edge(clk))then
-      if(reset /= '1' and init /= 10) then
-        cont := cont + 1;
-      end if;
-      if(cnt = 4999999) then
-        bk <= not bk;
-        cont := 0;
-      end if;
-      clk100 <= bk;
-    end if;
-    
     if (rising_edge(clk100)) then
       if (reset = '1' or init = 10) then
         init <= 0;
         unid <= 0;
         dec <= 10;
         cent <= 10;
-        cont :=0;
         cnt := -1;
         HEX3 <= "11111111"; -- DESLIGA O HEX3
 
