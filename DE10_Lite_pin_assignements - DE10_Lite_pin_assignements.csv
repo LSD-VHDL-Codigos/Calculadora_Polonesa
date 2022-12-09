@@ -1,23 +1,23 @@
-# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-# Your use of Altera Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Altera Program License 
-# Subscription Agreement, the Altera Quartus Prime License Agreement,
-# the Altera MegaCore Function License Agreement, or other 
-# applicable license agreement, including, without limitation, 
-# that your use is for the sole purpose of programming logic 
-# devices manufactured by Altera and sold by Altera or its 
-# authorized distributors.  Please refer to the applicable 
-# agreement for further details.
-# Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-# File: C:\Users\UFMG\Documents\UFMG\MAX 10 FPGA device support\DE10-Lite_v.2.1.0_SystemCD\Tools\SystemBuilder\CodeGenerated\DE10_LITE\modelo\modelo.csv
-# Generated on: Wed Sep 01 08:09:33 2021
-# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.,,,,,,,,,,
+# Your use of Altera Corporation's design tools,logic functions,,,,,,,,,
+# and other software and tools,and its AMPP partner logic,,,,,,,,,
+# functions,and any output files from any of the foregoing,,,,,,,,,
+# (including device programming or simulation files),and any,,,,,,,,,
+# associated documentation or information are expressly subject,,,,,,,,,,
+# to the terms and conditions of the Altera Program License,,,,,,,,,,
+# Subscription Agreement,the Altera Quartus Prime License Agreement,,,,,,,,,
+# the Altera MegaCore Function License Agreement,or other,,,,,,,,,
+# applicable license agreement,including,without limitation,,,,,,,,
+# that your use is for the sole purpose of programming logic,,,,,,,,,,
+# devices manufactured by Altera and sold by Altera or its,,,,,,,,,,
+# authorized distributors.  Please refer to the applicable,,,,,,,,,,
+# agreement for further details.,,,,,,,,,,
+# Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition,,,,,,,,,,
+# File: C:\Users\UFMG\Documents\UFMG\MAX 10 FPGA device support\DE10-Lite_v.2.1.0_SystemCD\Tools\SystemBuilder\CodeGenerated\DE10_LITE\modelo\modelo.csv,,,,,,,,,,
+# Generated on: Wed Sep 01 08:09:33 2021,,,,,,,,,,
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.,,,,,,,,,,
 To,Direction,Location,I/O Bank,VREF Group,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Strict Preservation
-clk,Unknown,PIN_P11,3,B3_N0,3.3-V LVTTL,,,,,
+clk,Unknown,PIN_N14,6,B6_N0,3.3-V LVTTL,,,,,
 HEX0[0],Unknown,PIN_C14,7,B7_N0,3.3-V LVTTL,,,,,
 HEX0[1],Unknown,PIN_E15,7,B7_N0,3.3-V LVTTL,,,,,
 HEX0[2],Unknown,PIN_C15,7,B7_N0,3.3-V LVTTL,,,,,
