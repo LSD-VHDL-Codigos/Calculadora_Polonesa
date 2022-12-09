@@ -78,6 +78,7 @@ begin
     wait for 3*PERIODO;
     ENT_ENTERN <= '0';
     ENT_ENTERS <= '0';
+    ENT_RESET <= '1';
     wait;
   end process stimulus;
 end architecture;

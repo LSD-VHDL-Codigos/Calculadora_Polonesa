@@ -17,7 +17,7 @@
 :: Modifique a linha abaixo para o caminho do seu computador onde se encontra os seus arquivos fonte a serem compilados e simulados.
 cd C:\Users\felip\OneDrive\Documentos\GitHub\Calculadora_Polonesa
 :: Modifique as linhas seguintes para incluir os arquivos .vhd que deseja analisar (compilar).
-ghdl -a dividor_clock.vhd
+ghdl -a divisor_clock.vhd
 ghdl -a convLeds.vhd
 ghdl -a calc.vhd
 ghdl -a tb_calc.vhd
