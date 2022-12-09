@@ -19,15 +19,15 @@ process(clk50MHz, b)
 	variable cnt : integer range 0 to 5000000;
     begin
       if(rising_edge(clk50MHz)) then
-         if(rset = '1') then
+         /*if(rset = '1') then
            cnt := 0;
-        else
+        else*/
            cnt := cnt + 1;
            end if;
         if(cnt = 4999999) then
           b <= not b;
           cnt := 0;
-        end if;
+        --end if;
       end if;
       clk100ms <= b;
     end process;

@@ -1,5 +1,9 @@
 $date
+<<<<<<< Updated upstream
   Fri Dec 09 20:18:38 2022
+=======
+  Fri Dec 09 14:40:23 2022
+>>>>>>> Stashed changes
 $end
 $version
   GHDL v0
