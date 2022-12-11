@@ -1,14 +1,14 @@
 
-State Machine - |calc|PN
-Name PN.DS PN.US PN.UN PN.DN 
-PN.DN 0 0 0 0 
-PN.UN 0 0 1 1 
-PN.US 0 1 0 1 
-PN.DS 1 0 0 1 
-
 State Machine - |calc|PS
-Name PS.US PS.DN PS.UN PS.DS 
-PS.DS 0 0 0 0 
+Name PS.DS PS.DN PS.UN PS.US 
+PS.US 0 0 0 0 
 PS.UN 0 0 1 1 
 PS.DN 0 1 0 1 
-PS.US 1 0 0 1 
+PS.DS 1 0 0 1 
+
+State Machine - |calc|PN
+Name PN.DS PN.DN PN.UN PN.US 
+PN.US 0 0 0 0 
+PN.UN 0 0 1 1 
+PN.DN 0 1 0 1 
+PN.DS 1 0 0 1 

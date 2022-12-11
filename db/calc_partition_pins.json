@@ -88,11 +88,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[0]",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{
@@ -104,11 +100,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "sinal[1]",
 					"strict" : false
 				},
 				{
-					"name" : "sinal[1]",
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "numero[0]",
 					"strict" : false
 				},
 				{
@@ -128,7 +128,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "numero[0]",
+					"name" : "clk",
 					"strict" : false
 				}
 			]

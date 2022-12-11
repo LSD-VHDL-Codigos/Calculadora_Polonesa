@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon Dec 05 14:36:18 2022
+Analysis & Synthesis Status : Successful - Sun Dec 11 17:37:21 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : calc
 Top-level Entity Name : calc
 Family : MAX 10
-Total logic elements : 2,237
-    Total combinational functions : 2,237
-    Dedicated logic registers : 143
-Total registers : 143
+Total logic elements : 2,196
+    Total combinational functions : 2,085
+    Dedicated logic registers : 169
+Total registers : 169
 Total pins : 42
 Total virtual pins : 0
 Total memory bits : 0

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for calc
-Mon Dec 05 14:36:18 2022
+Sun Dec 11 17:37:21 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,21 +13,21 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |calc|PN
-  9. State Machine - |calc|PS
+  8. State Machine - |calc|PS
+  9. State Machine - |calc|PN
  10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
- 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
- 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div7
- 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div6
- 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div5
- 22. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div7
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div6
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Div5
  23. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
  24. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult1
  25. lpm_mult Parameter Settings by Entity Instance
@@ -60,15 +60,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 05 14:36:18 2022       ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 11 17:37:21 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; calc                                        ;
 ; Top-level Entity Name              ; calc                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 2,237                                       ;
-;     Total combinational functions  ; 2,237                                       ;
-;     Dedicated logic registers      ; 143                                         ;
-; Total registers                    ; 143                                         ;
+; Total logic elements               ; 2,196                                       ;
+;     Total combinational functions  ; 2,085                                       ;
+;     Dedicated logic registers      ; 169                                         ;
+; Total registers                    ; 169                                         ;
 ; Total pins                         ; 42                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -179,7 +179,7 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.0%      ;
+;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -189,6 +189,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
+; divisor_clock.vhd                ; yes             ; User VHDL File               ; C:/root/Lab-SD/Calculadora_Polonesa/divisor_clock.vhd                          ;         ;
 ; convLeds.vhd                     ; yes             ; User VHDL File               ; C:/root/Lab-SD/Calculadora_Polonesa/convLeds.vhd                               ;         ;
 ; calc.vhd                         ; yes             ; User VHDL File               ; C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd                                   ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
@@ -217,16 +218,11 @@ https://fpgasoftware.intel.com/eula.
 ; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/root/Lab-SD/Calculadora_Polonesa/db/abs_divider_kbg.tdf                     ;         ;
 ; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/root/Lab-SD/Calculadora_Polonesa/db/alt_u_div_she.tdf                       ;         ;
 ; db/lpm_abs_r99.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/root/Lab-SD/Calculadora_Polonesa/db/lpm_abs_r99.tdf                         ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
-; addcore.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
-; look_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_cai.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/root/Lab-SD/Calculadora_Polonesa/db/add_sub_cai.tdf                         ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
 ; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
 ; multcore.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
 ; csa_add.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
 ; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
@@ -237,42 +233,46 @@ https://fpgasoftware.intel.com/eula.
 ; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
 ; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
 ; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
 ; db/add_sub_8kg.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/root/Lab-SD/Calculadora_Polonesa/db/add_sub_8kg.tdf                         ;         ;
 ; db/add_sub_6vg.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/root/Lab-SD/Calculadora_Polonesa/db/add_sub_6vg.tdf                         ;         ;
 ; altshift.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 2,237     ;
-;                                             ;           ;
-; Total combinational functions               ; 2237      ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 926       ;
-;     -- 3 input functions                    ; 623       ;
-;     -- <=2 input functions                  ; 688       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1675      ;
-;     -- arithmetic mode                      ; 562       ;
-;                                             ;           ;
-; Total registers                             ; 143       ;
-;     -- Dedicated logic registers            ; 143       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 42        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 143       ;
-; Total fan-out                               ; 7372      ;
-; Average fan-out                             ; 2.99      ;
-+---------------------------------------------+-----------+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 2,196              ;
+;                                             ;                    ;
+; Total combinational functions               ; 2085               ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 815                ;
+;     -- 3 input functions                    ; 588                ;
+;     -- <=2 input functions                  ; 682                ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 1492               ;
+;     -- arithmetic mode                      ; 593                ;
+;                                             ;                    ;
+; Total registers                             ; 169                ;
+;     -- Dedicated logic registers            ; 169                ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 42                 ;
+;                                             ;                    ;
+; Embedded Multiplier 9-bit elements          ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; divisor_clock:x4|b ;
+; Maximum fan-out                             ; 146                ;
+; Total fan-out                               ; 6754               ;
+; Average fan-out                             ; 2.89               ;
++---------------------------------------------+--------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -280,21 +280,21 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                          ; Entity Name     ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |calc                                          ; 2237 (684)          ; 143 (143)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 42   ; 0            ; 0          ; |calc                                                                                                                        ; calc            ; work         ;
+; |calc                                          ; 2085 (518)          ; 169 (145)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 42   ; 0            ; 0          ; |calc                                                                                                                        ; calc            ; work         ;
 ;    |convLeds:x1|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|convLeds:x1                                                                                                            ; convLeds        ; work         ;
 ;    |convLeds:x2|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|convLeds:x2                                                                                                            ; convLeds        ; work         ;
 ;    |convLeds:x3|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|convLeds:x3                                                                                                            ; convLeds        ; work         ;
-;    |lpm_add_sub:Add1|                          ; 23 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_add_sub:Add1                                                                                                       ; lpm_add_sub     ; work         ;
-;       |add_sub_cai:auto_generated|             ; 23 (23)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_add_sub:Add1|add_sub_cai:auto_generated                                                                            ; add_sub_cai     ; work         ;
-;    |lpm_divide:Div1|                           ; 107 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1                                                                                                        ; lpm_divide      ; work         ;
-;       |lpm_divide_fbo:auto_generated|          ; 107 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1|lpm_divide_fbo:auto_generated                                                                          ; lpm_divide_fbo  ; work         ;
-;          |abs_divider_kbg:divider|             ; 107 (13)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                                                  ; abs_divider_kbg ; work         ;
-;             |alt_u_div_she:divider|            ; 94 (94)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider                            ; alt_u_div_she   ; work         ;
-;    |lpm_divide:Div2|                           ; 286 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2                                                                                                        ; lpm_divide      ; work         ;
-;       |lpm_divide_cbo:auto_generated|          ; 286 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2|lpm_divide_cbo:auto_generated                                                                          ; lpm_divide_cbo  ; work         ;
-;          |abs_divider_hbg:divider|             ; 286 (7)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider                                                  ; abs_divider_hbg ; work         ;
+;    |divisor_clock:x4|                          ; 32 (32)             ; 24 (24)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|divisor_clock:x4                                                                                                       ; divisor_clock   ; work         ;
+;    |lpm_divide:Div1|                           ; 114 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1                                                                                                        ; lpm_divide      ; work         ;
+;       |lpm_divide_fbo:auto_generated|          ; 114 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1|lpm_divide_fbo:auto_generated                                                                          ; lpm_divide_fbo  ; work         ;
+;          |abs_divider_kbg:divider|             ; 114 (13)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                                                  ; abs_divider_kbg ; work         ;
+;             |alt_u_div_she:divider|            ; 100 (100)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider                            ; alt_u_div_she   ; work         ;
+;             |lpm_abs_5b9:my_abs_num|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div1|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|lpm_abs_5b9:my_abs_num                           ; lpm_abs_5b9     ; work         ;
+;    |lpm_divide:Div2|                           ; 288 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2                                                                                                        ; lpm_divide      ; work         ;
+;       |lpm_divide_cbo:auto_generated|          ; 288 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2|lpm_divide_cbo:auto_generated                                                                          ; lpm_divide_cbo  ; work         ;
+;          |abs_divider_hbg:divider|             ; 288 (7)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider                                                  ; abs_divider_hbg ; work         ;
 ;             |alt_u_div_mhe:divider|            ; 257 (257)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider|alt_u_div_mhe:divider                            ; alt_u_div_mhe   ; work         ;
-;             |lpm_abs_6b9:my_abs_num|           ; 22 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider|lpm_abs_6b9:my_abs_num                           ; lpm_abs_6b9     ; work         ;
+;             |lpm_abs_6b9:my_abs_num|           ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div2|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider|lpm_abs_6b9:my_abs_num                           ; lpm_abs_6b9     ; work         ;
 ;    |lpm_divide:Div3|                           ; 126 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div3                                                                                                        ; lpm_divide      ; work         ;
 ;       |lpm_divide_dbo:auto_generated|          ; 126 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div3|lpm_divide_dbo:auto_generated                                                                          ; lpm_divide_dbo  ; work         ;
 ;          |abs_divider_ibg:divider|             ; 126 (5)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div3|lpm_divide_dbo:auto_generated|abs_divider_ibg:divider                                                  ; abs_divider_ibg ; work         ;
@@ -304,11 +304,11 @@ https://fpgasoftware.intel.com/eula.
 ;       |lpm_divide_fbo:auto_generated|          ; 104 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div5|lpm_divide_fbo:auto_generated                                                                          ; lpm_divide_fbo  ; work         ;
 ;          |abs_divider_kbg:divider|             ; 104 (13)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div5|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                                                  ; abs_divider_kbg ; work         ;
 ;             |alt_u_div_she:divider|            ; 91 (91)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div5|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider                            ; alt_u_div_she   ; work         ;
-;    |lpm_divide:Div6|                           ; 293 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6                                                                                                        ; lpm_divide      ; work         ;
-;       |lpm_divide_cbo:auto_generated|          ; 293 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6|lpm_divide_cbo:auto_generated                                                                          ; lpm_divide_cbo  ; work         ;
-;          |abs_divider_hbg:divider|             ; 293 (7)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider                                                  ; abs_divider_hbg ; work         ;
+;    |lpm_divide:Div6|                           ; 290 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6                                                                                                        ; lpm_divide      ; work         ;
+;       |lpm_divide_cbo:auto_generated|          ; 290 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6|lpm_divide_cbo:auto_generated                                                                          ; lpm_divide_cbo  ; work         ;
+;          |abs_divider_hbg:divider|             ; 290 (7)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider                                                  ; abs_divider_hbg ; work         ;
 ;             |alt_u_div_mhe:divider|            ; 257 (257)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider|alt_u_div_mhe:divider                            ; alt_u_div_mhe   ; work         ;
-;             |lpm_abs_6b9:my_abs_num|           ; 29 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider|lpm_abs_6b9:my_abs_num                           ; lpm_abs_6b9     ; work         ;
+;             |lpm_abs_6b9:my_abs_num|           ; 26 (26)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div6|lpm_divide_cbo:auto_generated|abs_divider_hbg:divider|lpm_abs_6b9:my_abs_num                           ; lpm_abs_6b9     ; work         ;
 ;    |lpm_divide:Div7|                           ; 118 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div7                                                                                                        ; lpm_divide      ; work         ;
 ;       |lpm_divide_dbo:auto_generated|          ; 118 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div7|lpm_divide_dbo:auto_generated                                                                          ; lpm_divide_dbo  ; work         ;
 ;          |abs_divider_ibg:divider|             ; 118 (5)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Div7|lpm_divide_dbo:auto_generated|abs_divider_ibg:divider                                                  ; abs_divider_ibg ; work         ;
@@ -323,8 +323,8 @@ https://fpgasoftware.intel.com/eula.
 ;          |abs_divider_ucg:divider|             ; 175 (4)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Mod1|lpm_divide_s4o:auto_generated|abs_divider_ucg:divider                                                  ; abs_divider_ucg ; work         ;
 ;             |alt_u_div_gke:divider|            ; 164 (164)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Mod1|lpm_divide_s4o:auto_generated|abs_divider_ucg:divider|alt_u_div_gke:divider                            ; alt_u_div_gke   ; work         ;
 ;             |lpm_abs_5b9:my_abs_num|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_divide:Mod1|lpm_divide_s4o:auto_generated|abs_divider_ucg:divider|lpm_abs_5b9:my_abs_num                           ; lpm_abs_5b9     ; work         ;
-;    |lpm_mult:Mult0|                            ; 29 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_mult:Mult0                                                                                                         ; lpm_mult        ; work         ;
-;       |multcore:mult_core|                     ; 29 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore        ; work         ;
+;    |lpm_mult:Mult0|                            ; 28 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_mult:Mult0                                                                                                         ; lpm_mult        ; work         ;
+;       |multcore:mult_core|                     ; 28 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore        ; work         ;
 ;          |mpar_add:padder|                     ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add        ; work         ;
 ;             |lpm_add_sub:adder[0]|             ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub     ; work         ;
 ;                |add_sub_8kg:auto_generated|    ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |calc|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_8kg:auto_generated                      ; add_sub_8kg     ; work         ;
@@ -345,27 +345,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 Encoding Type:  One-Hot
 +---------------------------------------+
-; State Machine - |calc|PN              ;
+; State Machine - |calc|PS              ;
 +-------+-------+-------+-------+-------+
-; Name  ; PN.DS ; PN.US ; PN.UN ; PN.DN ;
+; Name  ; PS.DS ; PS.DN ; PS.UN ; PS.US ;
 +-------+-------+-------+-------+-------+
-; PN.DN ; 0     ; 0     ; 0     ; 0     ;
-; PN.UN ; 0     ; 0     ; 1     ; 1     ;
-; PN.US ; 0     ; 1     ; 0     ; 1     ;
-; PN.DS ; 1     ; 0     ; 0     ; 1     ;
+; PS.US ; 0     ; 0     ; 0     ; 0     ;
+; PS.UN ; 0     ; 0     ; 1     ; 1     ;
+; PS.DN ; 0     ; 1     ; 0     ; 1     ;
+; PS.DS ; 1     ; 0     ; 0     ; 1     ;
 +-------+-------+-------+-------+-------+
 
 
 Encoding Type:  One-Hot
 +---------------------------------------+
-; State Machine - |calc|PS              ;
+; State Machine - |calc|PN              ;
 +-------+-------+-------+-------+-------+
-; Name  ; PS.US ; PS.DN ; PS.UN ; PS.DS ;
+; Name  ; PN.DS ; PN.DN ; PN.UN ; PN.US ;
 +-------+-------+-------+-------+-------+
-; PS.DS ; 0     ; 0     ; 0     ; 0     ;
-; PS.UN ; 0     ; 0     ; 1     ; 1     ;
-; PS.DN ; 0     ; 1     ; 0     ; 1     ;
-; PS.US ; 1     ; 0     ; 0     ; 1     ;
+; PN.US ; 0     ; 0     ; 0     ; 0     ;
+; PN.UN ; 0     ; 0     ; 1     ; 1     ;
+; PN.DN ; 0     ; 1     ; 0     ; 1     ;
+; PN.DS ; 1     ; 0     ; 0     ; 1     ;
 +-------+-------+-------+-------+-------+
 
 
@@ -374,19 +374,31 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------+
 ; Register name                          ; Reason for Removal                     ;
 +----------------------------------------+----------------------------------------+
-; HEX3[2]~reg0                           ; Merged with HEX3[1]~reg0               ;
-; HEX3[3]~reg0                           ; Merged with HEX3[1]~reg0               ;
-; HEX3[4]~reg0                           ; Merged with HEX3[1]~reg0               ;
-; HEX3[5]~reg0                           ; Merged with HEX3[1]~reg0               ;
-; HEX3[6]~reg0                           ; Merged with HEX3[1]~reg0               ;
-; HEX3[7]~reg0                           ; Merged with HEX3[1]~reg0               ;
-; HEX3[1]~reg0                           ; Stuck at VCC due to stuck port data_in ;
-; PN.US                                  ; Lost fanout                            ;
-; PN.DS                                  ; Lost fanout                            ;
+; HEX3[1]~reg0                           ; Merged with HEX3[0]~reg0               ;
+; HEX3[2]~reg0                           ; Merged with HEX3[0]~reg0               ;
+; HEX3[3]~reg0                           ; Merged with HEX3[0]~reg0               ;
+; HEX3[4]~reg0                           ; Merged with HEX3[0]~reg0               ;
+; HEX3[5]~reg0                           ; Merged with HEX3[0]~reg0               ;
+; HEX3[7]~reg0                           ; Merged with HEX3[0]~reg0               ;
+; init[3]                                ; Merged with init[1]                    ;
+; init[2]                                ; Stuck at GND due to stuck port data_in ;
+; HEX3[0]~reg0                           ; Stuck at VCC due to stuck port data_in ;
 ; PS.UN                                  ; Lost fanout                            ;
 ; PS.DN                                  ; Lost fanout                            ;
-; Total Number of Removed Registers = 11 ;                                        ;
+; PN.US                                  ; Lost fanout                            ;
+; PN.DS                                  ; Lost fanout                            ;
+; Total Number of Removed Registers = 13 ;                                        ;
 +----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; init[2]       ; Stuck at GND              ; HEX3[0]~reg0                           ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -394,12 +406,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 143   ;
-; Number of registers using Synchronous Clear  ; 58    ;
-; Number of registers using Synchronous Load   ; 28    ;
+; Total registers                              ; 169   ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 133   ;
+; Number of registers using Clock Enable       ; 135   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -409,62 +421,63 @@ Encoding Type:  One-Hot
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; unid[3]                                 ; 7       ;
 ; unid[1]                                 ; 7       ;
-; dec[3]                                  ; 7       ;
+; unid[3]                                 ; 7       ;
 ; dec[1]                                  ; 7       ;
-; cent[3]                                 ; 7       ;
+; dec[3]                                  ; 7       ;
 ; cent[1]                                 ; 7       ;
-; PilhaNumero[5][10]                      ; 4       ;
-; \sync_proc:cnt[0]                       ; 83      ;
-; \sync_proc:cnt[4]                       ; 10      ;
-; \sync_proc:cnt[3]                       ; 24      ;
-; \sync_proc:cnt[2]                       ; 29      ;
-; \sync_proc:cnt[1]                       ; 100     ;
-; PilhaNumero[6][10]                      ; 4       ;
-; PilhaNumero[4][10]                      ; 4       ;
-; PilhaNumero[7][10]                      ; 4       ;
-; PilhaNumero[9][10]                      ; 4       ;
-; PilhaNumero[2][10]                      ; 4       ;
-; PilhaNumero[1][10]                      ; 4       ;
-; PilhaNumero[0][10]                      ; 4       ;
-; PilhaNumero[3][10]                      ; 4       ;
-; PilhaNumero[8][10]                      ; 4       ;
-; PilhaNumero[10][10]                     ; 4       ;
-; PilhaNumero[5][4]                       ; 4       ;
-; PilhaNumero[6][4]                       ; 4       ;
-; PilhaNumero[4][4]                       ; 4       ;
-; PilhaNumero[7][4]                       ; 4       ;
-; PilhaNumero[9][4]                       ; 4       ;
-; PilhaNumero[2][4]                       ; 4       ;
-; PilhaNumero[1][4]                       ; 4       ;
-; PilhaNumero[0][4]                       ; 4       ;
-; PilhaNumero[3][4]                       ; 4       ;
-; PilhaNumero[8][4]                       ; 4       ;
-; PilhaNumero[10][4]                      ; 4       ;
-; PilhaNumero[5][3]                       ; 4       ;
-; PilhaNumero[6][3]                       ; 4       ;
-; PilhaNumero[4][3]                       ; 4       ;
-; PilhaNumero[7][3]                       ; 4       ;
-; PilhaNumero[2][3]                       ; 4       ;
-; PilhaNumero[1][3]                       ; 4       ;
-; PilhaNumero[0][3]                       ; 4       ;
-; PilhaNumero[3][3]                       ; 4       ;
-; PilhaNumero[9][3]                       ; 4       ;
-; PilhaNumero[8][3]                       ; 4       ;
-; PilhaNumero[10][3]                      ; 4       ;
-; PilhaNumero[5][0]                       ; 4       ;
-; PilhaNumero[6][0]                       ; 4       ;
-; PilhaNumero[4][0]                       ; 4       ;
-; PilhaNumero[7][0]                       ; 4       ;
-; PilhaNumero[9][0]                       ; 4       ;
-; PilhaNumero[2][0]                       ; 4       ;
-; PilhaNumero[1][0]                       ; 4       ;
-; PilhaNumero[0][0]                       ; 4       ;
-; PilhaNumero[3][0]                       ; 4       ;
-; PilhaNumero[8][0]                       ; 4       ;
-; PilhaNumero[10][0]                      ; 4       ;
-; Total number of inverted registers = 55 ;         ;
+; cent[3]                                 ; 7       ;
+; init[1]                                 ; 8       ;
+; PilhaNumero[9][0]                       ; 3       ;
+; \sync_proc:cnt[3]                       ; 43      ;
+; \sync_proc:cnt[2]                       ; 40      ;
+; \sync_proc:cnt[0]                       ; 79      ;
+; \sync_proc:cnt[1]                       ; 101     ;
+; \sync_proc:cnt[4]                       ; 8       ;
+; PilhaNumero[2][0]                       ; 3       ;
+; PilhaNumero[1][0]                       ; 3       ;
+; PilhaNumero[0][0]                       ; 3       ;
+; PilhaNumero[3][0]                       ; 3       ;
+; PilhaNumero[8][0]                       ; 3       ;
+; PilhaNumero[10][0]                      ; 3       ;
+; PilhaNumero[5][0]                       ; 3       ;
+; PilhaNumero[6][0]                       ; 3       ;
+; PilhaNumero[4][0]                       ; 3       ;
+; PilhaNumero[7][0]                       ; 3       ;
+; PilhaNumero[9][10]                      ; 3       ;
+; PilhaNumero[2][10]                      ; 3       ;
+; PilhaNumero[1][10]                      ; 3       ;
+; PilhaNumero[0][10]                      ; 3       ;
+; PilhaNumero[3][10]                      ; 3       ;
+; PilhaNumero[8][10]                      ; 3       ;
+; PilhaNumero[10][10]                     ; 3       ;
+; PilhaNumero[5][10]                      ; 3       ;
+; PilhaNumero[6][10]                      ; 3       ;
+; PilhaNumero[4][10]                      ; 3       ;
+; PilhaNumero[7][10]                      ; 3       ;
+; PilhaNumero[9][4]                       ; 3       ;
+; PilhaNumero[2][4]                       ; 3       ;
+; PilhaNumero[1][4]                       ; 3       ;
+; PilhaNumero[0][4]                       ; 3       ;
+; PilhaNumero[3][4]                       ; 3       ;
+; PilhaNumero[8][4]                       ; 3       ;
+; PilhaNumero[10][4]                      ; 3       ;
+; PilhaNumero[5][4]                       ; 3       ;
+; PilhaNumero[6][4]                       ; 3       ;
+; PilhaNumero[4][4]                       ; 3       ;
+; PilhaNumero[7][4]                       ; 3       ;
+; PilhaNumero[2][3]                       ; 3       ;
+; PilhaNumero[1][3]                       ; 3       ;
+; PilhaNumero[0][3]                       ; 3       ;
+; PilhaNumero[3][3]                       ; 3       ;
+; PilhaNumero[9][3]                       ; 3       ;
+; PilhaNumero[8][3]                       ; 3       ;
+; PilhaNumero[10][3]                      ; 3       ;
+; PilhaNumero[5][3]                       ; 3       ;
+; PilhaNumero[6][3]                       ; 3       ;
+; PilhaNumero[4][3]                       ; 3       ;
+; PilhaNumero[7][3]                       ; 3       ;
+; Total number of inverted registers = 56 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -473,62 +486,44 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[1][9]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[1][1]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[2][9]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[2][1]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[3][6]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[3][2]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[4][6]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[4][1]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[5][9]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[5][2]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[6][9]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[6][1]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[7][8]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[7][2]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[8][8]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[8][2]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[9][8]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[9][1]    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |calc|PilhaNumero[10][8]   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[10][1]   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |calc|cent[0]              ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |calc|PilhaNumero[0][5]    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[0][2]    ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |calc|dec[0]               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[1][10]   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[1][0]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[2][4]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[2][0]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[3][10]   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[3][3]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[4][4]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[4][0]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[5][4]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[5][0]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[6][4]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[6][3]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[7][4]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[7][3]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[8][4]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[8][3]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[9][10]   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[9][3]    ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[10][4]   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |calc|PilhaNumero[10][0]   ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[0][6]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[1][6]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[2][6]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[3][5]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[4][7]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[5][6]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[6][1]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[7][9]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[8][1]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[9][5]    ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |calc|PilhaNumero[10][9]   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |calc|cent[2]              ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |calc|dec[2]               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[0][0]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[1][0]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[2][0]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[3][10]   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[4][0]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[5][4]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[6][0]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[7][0]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[8][4]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[9][0]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[10][0]   ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |calc|unid[1]              ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |calc|cent[1]              ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[0][4]    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |calc|PilhaNumero[0][3]    ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |calc|dec[1]               ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |calc|PN                   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |calc|cent[3]              ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |calc|dec[3]               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |calc|PN                   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |calc|PN                   ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |calc|cnt                  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |calc|PS                   ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 77 LEs               ; 0 LEs                  ; No         ; |calc|Mux15                ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 77 LEs               ; 0 LEs                  ; No         ; |calc|Mux2                 ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 77 LEs               ; 0 LEs                  ; No         ; |calc|Mux25                ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 77 LEs               ; 0 LEs                  ; No         ; |calc|Mux36                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |calc|PS                   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |calc|PS                   ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 77 LEs               ; 0 LEs                  ; No         ; |calc|Mux21                ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 77 LEs               ; 0 LEs                  ; No         ; |calc|Mux6                 ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 77 LEs               ; 0 LEs                  ; No         ; |calc|Mux30                ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |calc|PilhaNumero          ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; No         ; |calc|PilhaNumero          ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |calc|PilhaNumero          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -716,34 +711,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1 ;
-+------------------------+-------------+----------------------------+
-; Parameter Name         ; Value       ; Type                       ;
-+------------------------+-------------+----------------------------+
-; LPM_WIDTH              ; 11          ; Untyped                    ;
-; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
-; LPM_DIRECTION          ; DEFAULT     ; Untyped                    ;
-; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                    ;
-; LPM_PIPELINE           ; 0           ; Untyped                    ;
-; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
-; REGISTERED_AT_END      ; 0           ; Untyped                    ;
-; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                    ;
-; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
-; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
-; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
-; DEVICE_FAMILY          ; MAX 10      ; Untyped                    ;
-; USE_WYS                ; OFF         ; Untyped                    ;
-; STYLE                  ; FAST        ; Untyped                    ;
-; CBXI_PARAMETER         ; add_sub_cai ; Untyped                    ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
-+------------------------+-------------+----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +--------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                ;
 +------------------------------------------------+---------+---------------------+
@@ -851,26 +818,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 42                          ;
-; cycloneiii_ff         ; 143                         ;
-;     ENA               ; 55                          ;
-;     ENA SCLR          ; 50                          ;
-;     ENA SCLR SLD      ; 8                           ;
-;     ENA SLD           ; 20                          ;
-;     plain             ; 10                          ;
-; cycloneiii_lcell_comb ; 2246                        ;
-;     arith             ; 562                         ;
+; cycloneiii_ff         ; 169                         ;
+;     ENA               ; 134                         ;
+;     ENA SCLR SLD      ; 1                           ;
+;     plain             ; 34                          ;
+; cycloneiii_lcell_comb ; 2091                        ;
+;     arith             ; 593                         ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 85                          ;
-;         3 data inputs ; 474                         ;
-;     normal            ; 1684                        ;
+;         2 data inputs ; 107                         ;
+;         3 data inputs ; 483                         ;
+;     normal            ; 1498                        ;
 ;         0 data inputs ; 83                          ;
-;         1 data inputs ; 17                          ;
-;         2 data inputs ; 509                         ;
-;         3 data inputs ; 149                         ;
-;         4 data inputs ; 926                         ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 481                         ;
+;         3 data inputs ; 105                         ;
+;         4 data inputs ; 815                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 85.90                       ;
-; Average LUT depth     ; 54.64                       ;
+; Max LUT depth         ; 87.00                       ;
+; Average LUT depth     ; 57.33                       ;
 +-----------------------+-----------------------------+
 
 
@@ -879,7 +844,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -889,10 +854,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Dec 05 14:36:03 2022
+    Info: Processing started: Sun Dec 11 17:36:51 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calc -c calc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file divisor_clock.vhd
+    Info (12022): Found design unit 1: divisor_clock-Hardware File: C:/root/Lab-SD/Calculadora_Polonesa/divisor_clock.vhd Line: 11
+    Info (12023): Found entity 1: divisor_clock File: C:/root/Lab-SD/Calculadora_Polonesa/divisor_clock.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file convleds.vhd
     Info (12022): Found design unit 1: convLeds-hardware File: C:/root/Lab-SD/Calculadora_Polonesa/convLeds.vhd Line: 13
     Info (12023): Found entity 1: convLeds File: C:/root/Lab-SD/Calculadora_Polonesa/convLeds.vhd Line: 5
@@ -900,21 +868,21 @@ Info (12021): Found 2 design units, including 1 entities, in source file calc.vh
     Info (12022): Found design unit 1: calc-hardware File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 16
     Info (12023): Found entity 1: calc File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 7
 Info (12127): Elaborating entity "calc" for the top level hierarchy
-Info (12128): Elaborating entity "convLeds" for hierarchy "convLeds:x1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 31
-Info (278001): Inferred 11 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 103
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 91
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 84
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div7" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 98
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div6" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 95
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div5" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 95
-    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 59
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 95
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 103
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 103
+Info (12128): Elaborating entity "convLeds" for hierarchy "convLeds:x1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 39
+Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:x4" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 42
+Info (278001): Inferred 10 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 134
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 119
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 112
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div7" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 128
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div6" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 125
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div5" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 125
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 125
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 134
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 134
     Info (12134): Parameter "LPM_WIDTHN" = "11"
     Info (12134): Parameter "LPM_WIDTHD" = "11"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -932,8 +900,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_u3c File: C:/root/Lab-SD/Calculadora_Polonesa/db/add_sub_u3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_5b9.tdf
     Info (12023): Found entity 1: lpm_abs_5b9 File: C:/root/Lab-SD/Calculadora_Polonesa/db/lpm_abs_5b9.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 91
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 91
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 119
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 119
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -947,8 +915,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
     Info (12023): Found entity 1: alt_u_div_oke File: C:/root/Lab-SD/Calculadora_Polonesa/db/alt_u_div_oke.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_7b9.tdf
     Info (12023): Found entity 1: lpm_abs_7b9 File: C:/root/Lab-SD/Calculadora_Polonesa/db/lpm_abs_7b9.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div3" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 84
-Info (12133): Instantiated megafunction "lpm_divide:Div3" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 84
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div3" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 112
+Info (12133): Instantiated megafunction "lpm_divide:Div3" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 112
     Info (12134): Parameter "LPM_WIDTHN" = "11"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -962,8 +930,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
     Info (12023): Found entity 1: alt_u_div_nhe File: C:/root/Lab-SD/Calculadora_Polonesa/db/alt_u_div_nhe.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_o99.tdf
     Info (12023): Found entity 1: lpm_abs_o99 File: C:/root/Lab-SD/Calculadora_Polonesa/db/lpm_abs_o99.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
-Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
     Info (12134): Parameter "LPM_WIDTHN" = "20"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -977,15 +945,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
     Info (12023): Found entity 1: alt_u_div_mhe File: C:/root/Lab-SD/Calculadora_Polonesa/db/alt_u_div_mhe.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_6b9.tdf
     Info (12023): Found entity 1: lpm_abs_6b9 File: C:/root/Lab-SD/Calculadora_Polonesa/db/lpm_abs_6b9.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div7" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 98
-Info (12133): Instantiated megafunction "lpm_divide:Div7" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 98
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div7" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 128
+Info (12133): Instantiated megafunction "lpm_divide:Div7" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 128
     Info (12134): Parameter "LPM_WIDTHN" = "11"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
     Info (12134): Parameter "LPM_WIDTHN" = "11"
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -999,23 +967,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alt_
     Info (12023): Found entity 1: alt_u_div_she File: C:/root/Lab-SD/Calculadora_Polonesa/db/alt_u_div_she.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_r99.tdf
     Info (12023): Found entity 1: lpm_abs_r99 File: C:/root/Lab-SD/Calculadora_Polonesa/db/lpm_abs_r99.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div5" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 95
-Info (12133): Instantiated megafunction "lpm_divide:Div5" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 95
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div5" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 125
+Info (12133): Instantiated megafunction "lpm_divide:Div5" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 125
     Info (12134): Parameter "LPM_WIDTHN" = "11"
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
-Info (12130): Elaborated megafunction instantiation "lpm_add_sub:Add1" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 59
-Info (12133): Instantiated megafunction "lpm_add_sub:Add1" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 59
-    Info (12134): Parameter "LPM_WIDTH" = "11"
-    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_cai.tdf
-    Info (12023): Found entity 1: add_sub_cai File: C:/root/Lab-SD/Calculadora_Polonesa/db/add_sub_cai.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
-Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 80
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 109
     Info (12134): Parameter "LPM_WIDTHA" = "11"
     Info (12134): Parameter "LPM_WIDTHB" = "8"
     Info (12134): Parameter "LPM_WIDTHP" = "19"
@@ -1041,28 +1001,28 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 12
     Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 12
     Warning (13410): Pin "HEX2[7]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 12
-    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 39
-    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 39
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 39
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 39
-    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 39
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 39
-    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 39
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 47
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 47
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 47
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 47
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 47
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 47
+    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/root/Lab-SD/Calculadora_Polonesa/calc.vhd Line: 47
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_8kg:auto_generated|op_1~0"
     Info (17048): Logic cell "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_8kg:auto_generated|op_1~0"
+    Info (17048): Logic cell "lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_8kg:auto_generated|op_1~0"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2290 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2277 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 2248 logic cells
+    Info (21061): Implemented 2235 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4833 megabytes
-    Info: Processing ended: Mon Dec 05 14:36:18 2022
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Sun Dec 11 17:37:21 2022
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:16
 
 

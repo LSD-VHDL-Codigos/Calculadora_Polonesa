@@ -29,56 +29,56 @@ architecture hardware of tb_calc is
 begin
   -- geração do clock com periodo PERIODO
   ENT_CLK <= ENT_CLK_ENABLE and not ENT_CLK after PERIODO/2;
-  ENT_CLK_ENABLE <= '1', '0' after 50*PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
+  ENT_CLK_ENABLE <= '1', '0' after 250*PERIODO; -- a simulação termina após transcorrer 20 períodos de clock.
 
   -- instanciação do DUT, que nesse exemplo é um ffd
   DUT : calc port map(clk => ENT_CLK, reset => ENT_RESET, numero => ENT_NUM, sinal => ENT_SINAL, enterN => ENT_ENTERN, enterS => ENT_ENTERS,
                        HEX0 => ENT_H0, HEX1 => ENT_H1, HEX2 => ENT_H2, HEX3 => ENT_H3);
   -- a partir daqui declaro os estímulos de entrada, ou a injecao de sinais
   -- um process para o reset
-  reset : process
-  begin
-    ENT_RESET <= '1';
-    wait for 2 * PERIODO; -- um reset de duração de 2 períodos de clock
-    ENT_RESET <= '0';
-    wait;
-  end process reset;
-
   stimulus: process
   begin
-
+    ENT_RESET <= '1';
+    wait for 12 * PERIODO;
+    ENT_RESET <= '0';
+    wait for 12 * PERIODO;
     ENT_ENTERN <= '0';
     ENT_ENTERS <= '0';
     ENT_NUM <= "0101";
-    wait for 2*PERIODO;
+    wait for 12*PERIODO;
     ENT_ENTERN <= '1';
-    wait for 4*PERIODO;
+    wait for 12*PERIODO;
     ENT_ENTERN <= '0';
-    wait for 2*PERIODO;
+    wait for 12*PERIODO;
     ENT_NUM <= "0110";
     ENT_ENTERN <= '1';
-    wait for 2*PERIODO;
+    wait for 12*PERIODO;
     ENT_SINAL <= "10"; --DESLOCAMENTO PARA ESQUERDA
     ENT_ENTERS <= '1';
-    wait for 2*PERIODO;
+    wait for 12*PERIODO;
     ENT_ENTERS <= '0';
-    wait for 2*PERIODO;
+    wait for 12*PERIODO;
     ENT_ENTERN <= '0';
     ENT_SINAL <= "01"; --ADICAO
     ENT_ENTERS <= '1';
-    wait for 2*PERIODO;
+    wait for 12*PERIODO;
     ENT_ENTERS <= '0';
     wait for 3*PERIODO;
     ENT_NUM <= "1000";
     ENT_ENTERN <= '1';
-    wait for 3*PERIODO;
+    wait for 13*PERIODO;
     ENT_ENTERN <= '0';
     ENT_ENTERS <= '1';
     ENT_SINAL <= "01"; -- SUBTRACAO
-    wait for 3*PERIODO;
+    wait for 13*PERIODO;
     ENT_ENTERN <= '0';
     ENT_ENTERS <= '0';
     ENT_RESET <= '1';
+    wait for 13*PERIODO;
+    ENT_RESET <= '0';
+    wait for 12*PERIODO;
+    ENT_NUM <= "1011";
+    ENT_ENTERN <= '1';
     wait;
   end process stimulus;
 end architecture;

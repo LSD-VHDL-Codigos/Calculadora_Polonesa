@@ -15,7 +15,7 @@
 :: (1) Da janela Console digite no diretório onde se encontra o arquivo com extensão .do o comando "do script1.tcl"
 ::
 :: Modifique a linha abaixo para o caminho do seu computador onde se encontra os seus arquivos fonte a serem compilados e simulados.
-cd C:\Users\felip\OneDrive\Documentos\GitHub\Calculadora_Polonesa
+::cd C:\Users\felip\OneDrive\Documentos\GitHub\Calculadora_Polonesa
 :: Modifique as linhas seguintes para incluir os arquivos .vhd que deseja analisar (compilar).
 ghdl -a divisor_clock.vhd
 ghdl -a convLeds.vhd

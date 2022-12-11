@@ -41,7 +41,7 @@ begin
   x3 : convLeds port map(num => cent, HEX => HEX2);
   x4 : divisor_clock port map(clk50MHz =>clk, rset=>reset, clk100ms=>clk100);
 
-  sync_proc : process (clk, reset)
+  sync_proc : process (clk100, reset)
     variable cnt : integer range -1 to 10 := - 1;
   begin
     if (rising_edge(clk100)) then

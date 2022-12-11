@@ -1,28 +1,13 @@
 v 4
-<<<<<<< Updated upstream
-file . "divisor_clock.vhd" "b677cbb6f07a2392f2e067cce9b04579bda016ef" "20221209231838.282":
-  entity divisor_clock at 1( 0) + 0 on 571;
-  architecture hardware of divisor_clock at 11( 210) + 0 on 572;
-file . "calc.vhd" "98360aa07a975ab3e007537c47722e1ebfd967f0" "20221209231838.347":
-  entity calc at 1( 0) + 0 on 575;
-  architecture hardware of calc at 16( 371) + 0 on 576;
-file . "convLeds.vhd" "275bfa0c73c96ad795a7be35847e804f2c481856" "20221209231838.314":
-  entity convleds at 1( 0) + 0 on 573;
-  architecture hardware of convleds at 13( 209) + 0 on 574;
-file . "tb_calc.vhd" "6f1540b71bfe21b0f74d4d888b46075ff2b045b0" "20221209231838.376":
-  entity tb_calc at 2( 24) + 0 on 577;
-  architecture hardware of tb_calc at 9( 142) + 0 on 578;
-=======
-file . "tb_calc.vhd" "6f1540b71bfe21b0f74d4d888b46075ff2b045b0" "20221209174022.782":
-  entity tb_calc at 2( 24) + 0 on 475;
-  architecture hardware of tb_calc at 9( 142) + 0 on 476;
-file . "convLeds.vhd" "275bfa0c73c96ad795a7be35847e804f2c481856" "20221209174022.696":
-  entity convleds at 1( 0) + 0 on 471;
-  architecture hardware of convleds at 13( 209) + 0 on 472;
-file . "calc.vhd" "98360aa07a975ab3e007537c47722e1ebfd967f0" "20221209174022.742":
-  entity calc at 1( 0) + 0 on 473;
-  architecture hardware of calc at 16( 371) + 0 on 474;
-file . "divisor_clock.vhd" "b677cbb6f07a2392f2e067cce9b04579bda016ef" "20221209174022.650":
-  entity divisor_clock at 1( 0) + 0 on 469;
-  architecture hardware of divisor_clock at 11( 210) + 0 on 470;
->>>>>>> Stashed changes
+file . "tb_calc.vhd" "8a732dddb23fbbc92749c054c23e9933d03010b5" "20221211202648.511":
+  entity tb_calc at 2( 24) + 0 on 425;
+  architecture hardware of tb_calc at 9( 142) + 0 on 426;
+file . "convLeds.vhd" "275bfa0c73c96ad795a7be35847e804f2c481856" "20221211202648.442":
+  entity convleds at 1( 0) + 0 on 421;
+  architecture hardware of convleds at 13( 209) + 0 on 422;
+file . "divisor_clock.vhd" "92bca4819c9168d9b92dcea67eca6838bff140f2" "20221211202648.405":
+  entity divisor_clock at 1( 0) + 0 on 419;
+  architecture hardware of divisor_clock at 11( 210) + 0 on 420;
+file . "calc.vhd" "b69ed067cce7ae2601332fc5d63f932d31f8463e" "20221211202648.477":
+  entity calc at 1( 0) + 0 on 423;
+  architecture hardware of calc at 16( 371) + 0 on 424;
